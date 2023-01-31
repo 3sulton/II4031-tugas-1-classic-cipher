@@ -30,6 +30,24 @@ def test_vigenere_encrypt():
     vig.encrypt()
     assert vig.C == "ACE"
 
+    vig = vigenere("thisplaintext", "sony", "")
+    vig.encrypt()
+    assert vig.C == "LVVQHZNGFHRVL"
+
+    vig = vigenere("Dinas Pendidikan Kota Ternate meminta kepada pihak sekolah dan\
+orang tua siswa untuk jenjang pendidikan SD dan SMP seKota Ternate\
+untuk melarang para siswa membawa permainan latolato yang sedang\
+tren itu ke sekolah karena akan mengganggu kegiatan belajar mengajar\
+yang dinilai berbahaya sehingga mengantisipasi kecelakaan bagi anak di\
+daerah itu", "selatsunda", "")
+    vig.encrypt()
+    assert vig.C == "VMYALHYAGIVMVAGCIGDTWVYAMWGRPIFXLKXHUQDPALLKLWEBOA\
+ZHLNHJUAJTMEDILOUHQTMOUEGBUAJPWROIWAENQSVHLNLEJFHK\
+GXLTXJHNWEMREUDEYYDRSRRPTJUFLSOEXEFTUJDPWVXABFUAOA\
+LSWAMGSNQGKIOAGYNEHNAXFKXKYXRLSLVAKWHNDKSRXEGYANQG\
+YYVEZAUGDNTIWACSLZHNYEUAKQUAJDARTLTAVRUBSLLYTKYULNYKLMX\
+FANQTAWTPTKCXHCWPLKTSHODGAEYADVCQDEJESIMM"
+
 def test_vigenere_decrypt():
     vig = vigenere("", "aaa", "abc")
     vig.decrypt()
@@ -42,6 +60,24 @@ def test_vigenere_decrypt():
     vig = vigenere("", "ab cd", " a c e ")
     vig.decrypt()
     assert vig.M == "ABC"
+
+    vig = vigenere("", "sony", "LVVQHZNGFHRVL")
+    vig.decrypt()
+    assert vig.M == "THISPLAINTEXT"
+
+    vig = vigenere("", "selatsunda", "VMYALHYAGIVMVAGCIGDTWVYAMWGRPIFXLKXHUQDPALLKLWEBOA\
+ZHLNHJUAJTMEDILOUHQTMOUEGBUAJPWROIWAENQSVHLNLEJFHK\
+GXLTXJHNWEMREUDEYYDRSRRPTJUFLSOEXEFTUJDPWVXABFUAOA\
+LSWAMGSNQGKIOAGYNEHNAXFKXKYXRLSLVAKWHNDKSRXEGYANQG\
+YYVEZAUGDNTIWACSLZHNYEUAKQUAJDARTLTAVRUBSLLYTKYULNYKLMX\
+FANQTAWTPTKCXHCWPLKTSHODGAEYADVCQDEJESIMM")
+    vig.decrypt()
+    assert vig.M == "DINASPENDIDIKANKOTATERNATEMEMINTAKEPADAPIHAKSEKOLAHDAN\
+ORANGTUASISWAUNTUKJENJANGPENDIDIKANSDDANSMPSEKOTATERNATE\
+UNTUKMELARANGPARASISWAMEMBAWAPERMAINANLATOLATOYANGSEDANG\
+TRENITUKESEKOLAHKARENAAKANMENGGANGGUKEGIATANBELAJARMENGAJAR\
+YANGDINILAIBERBAHAYASEHINGGAMENGANTISIPASIKECELAKAANBAGIANAKDI\
+DAERAHITU"
 
 if __name__ == "__main__":
     test_vigenere_encrypt()
