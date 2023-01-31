@@ -1,3 +1,5 @@
+import math
+
 # p : plain char
 # c : chiper char
 # n : ukuran alfabet
@@ -9,9 +11,18 @@
 class chiper:
     def __init__(self, M, K, C) -> None:
         # removes all whitespace characters
+        # TO DO : filter semua karakter selain alfabet
         self.M = "".join(M.split())
         self.K = "".join(K.split())
         self.C = "".join(C.split())
+
+    def five_letter_format(self):
+        formated = ""
+        for i, c in enumerate(self.C):
+            if i % 5 == 0 and i != 0 and i != len(self.C) - 1:
+                formated = formated + " "
+            formated = formated + c
+        self.C = formated
 
     @staticmethod
     def e(p, k, n=26):
@@ -43,9 +54,23 @@ def test_d():
     assert chiper.int_to_char(chiper.d(chiper.char_to_int("B"), chiper.char_to_int("B"))) == "A"
     assert chiper.int_to_char(chiper.d(chiper.char_to_int("Y"), chiper.char_to_int("Z"))) == "Z"
 
+def test_five_letter_format():
+    chip = chiper("", "", "SUMIMASEN")
+    chip.five_letter_format()
+    assert chip.C == "SUMIM ASEN"
+
+    chip.C = "INU"
+    chip.five_letter_format()
+    assert chip.C == "INU"
+
+    chip.C = "ITADAKIMAS"
+    chip.five_letter_format()
+    assert chip.C == "ITADA KIMAS"
+
 if __name__ == "__main__":
     test_char_to_int()
     test_int_to_char()
     test_e()
     test_d()
+    test_five_letter_format()
     print("Everything passed")
