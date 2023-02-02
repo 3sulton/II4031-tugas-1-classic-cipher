@@ -1,7 +1,7 @@
 from chiper import chiper
 
 class vigenere(chiper):
-    def __init__(self, M, K, C):
+    def __init__(self, M="", K="", C=""):
         super().__init__(M, K, C)
     
     def encrypt(self):

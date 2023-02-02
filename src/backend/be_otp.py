@@ -1,7 +1,7 @@
 import random
 import string
 import datetime
-from vigenere import vigenere
+from be_vigenere import vigenere
 
 
 class otp(vigenere):

@@ -1,5 +1,5 @@
 from chiper import chiper
-from vigenere import vigenere
+from be_vigenere import vigenere
 
 class extendedVigenere(vigenere):
     def __init__(self, M="", K="", C=""):
