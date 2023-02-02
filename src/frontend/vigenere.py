@@ -390,7 +390,7 @@ class Vigenere():
         def save_file():
             file_content = entry_output.get('1.0', 'end')
             filename = "cipher-" + datetime.datetime.now().strftime("%H%M%S-%Y%m%d") + ".txt"
-            with open("src/file/" + filename, "w") as file:
+            with open(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) + '/file/' + filename, "w") as file:
                 file.write(file_content)
 
         # tombol save file dari output
