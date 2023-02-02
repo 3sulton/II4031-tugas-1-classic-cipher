@@ -1,5 +1,3 @@
-import math
-
 # p : plain char
 # c : chiper char
 # n : ukuran alfabet
