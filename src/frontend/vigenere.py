@@ -1,3 +1,4 @@
+import datetime
 import sys, os.path
 be_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 + '/backend/')
@@ -265,12 +266,14 @@ class Vigenere():
         )
 
         # checkbutton untuk menggunakan spasi atau tidak
+        is_five_letter_formatted = tk.IntVar()
         check = Checkbutton(
                 window,
                 anchor = "nw",
                 bg = "#E8DFCA",
                 text = "add a space after 5 letters",
-                font = ("Poppins Regular", 15 * -1)
+                font = ("Poppins Regular", 15 * -1),
+                variable=is_five_letter_formatted
         )
         # posisi checkbox
         check.pack()
@@ -282,13 +285,16 @@ class Vigenere():
         def encrypt():
             # plain teks
             plain_teks = entry_input.get('1.0', 'end')
-            print(plain_teks)
             key = entry_key.get('1.0', 'end')
-            print(key)
+            if key == '\n':
+                tk.messagebox.showwarning(message="Keynya jangan kosong, hadeh")
+                return
             vig = vigenere(M=plain_teks, K=key)
             vig.encrypt()
-            print(vig.C)
-            
+            entry_output.delete("1.0", tk.END)
+            if is_five_letter_formatted.get():
+                vig.five_letter_format()
+            entry_output.insert("1.0", vig.C)
 
         # tombol encrypt
         button_image_encrypt = PhotoImage(
@@ -308,6 +314,18 @@ class Vigenere():
             height=40.0
         )
 
+        def decrypt():
+            # plain teks
+            cipher_teks = entry_input.get('1.0', 'end')
+            key = entry_key.get('1.0', 'end')
+            if key == '\n':
+                tk.messagebox.showwarning(message="Keynya jangan kosong, hadeh")
+                return
+            vig = vigenere(C=cipher_teks, K=key)
+            vig.decrypt()
+            entry_output.delete("1.0", tk.END)
+            entry_output.insert("1.0", vig.M)
+
         # tombol decrypt
         button_image_decrypt = PhotoImage(
             file=relative_to_assets("decrypt.png"))
@@ -315,7 +333,7 @@ class Vigenere():
             image=button_image_decrypt,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("decrypt clicked"),
+            command=decrypt,
             relief="flat"
         )
         # posisi tombol decrypt
@@ -369,6 +387,12 @@ class Vigenere():
             height=71.0
         )
 
+        def save_file():
+            file_content = entry_output.get('1.0', 'end')
+            filename = "cipher-" + datetime.datetime.now().strftime("%H%M%S-%Y%m%d") + ".txt"
+            with open("src/file/" + filename, "w") as file:
+                file.write(file_content)
+
         # tombol save file dari output
         button_image_save = PhotoImage(
             file=relative_to_assets("save.png"))
@@ -376,7 +400,7 @@ class Vigenere():
             image=button_image_save,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("save clicked"),
+            command=save_file,
             relief="flat"
         )
         # posisi tombol save file
