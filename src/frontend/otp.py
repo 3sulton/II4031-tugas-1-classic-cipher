@@ -208,19 +208,35 @@ class OnetimePad():
             font=("Poppins Regular", 15 * -1)
         )
 
-        button_image_import1 = PhotoImage(
-            file=relative_to_assets("import.png"))
-        button_import1 = Button(
-            image=button_image_import1,
+        button_image_generate = PhotoImage(
+            file=relative_to_assets("generate_key.png"))
+        button_generate = Button(
+            image=button_image_generate,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("import1 clicked"),
+            command=lambda: print("generate clicked"),
             relief="flat"
         )
-        button_import1.place(
+        button_generate.place(
             x=221.0,
             y=201.0,
-            width=657.0,
+            width=317.0,
+            height=30.0
+        )
+
+        button_image_import_key = PhotoImage(
+            file=relative_to_assets("import_key.png"))
+        button_import_key = Button(
+            image=button_image_import_key,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("import_key clicked"),
+            relief="flat"
+        )
+        button_import_key.place(
+            x=561.0,
+            y=201.0,
+            width=317.0,
             height=30.0
         )
         
@@ -246,22 +262,6 @@ class OnetimePad():
             height=71.0
         )
 
-        button_image_save1 = PhotoImage(
-            file=relative_to_assets("save.png"))
-        button_save1 = Button(
-            image=button_image_save1,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("save clicked"),
-            relief="flat"
-        )
-        button_save1.place(
-            x=221.0,
-            y=314.0,
-            width=657.0,
-            height=30.0
-        )
-
         check = Checkbutton(
                 window,
                 anchor = "nw",
@@ -272,7 +272,7 @@ class OnetimePad():
         check.pack()
         check.place(
             x = 222.0,
-            y = 354.0
+            y = 324.0
         )
 
         button_image_encrypt = PhotoImage(
@@ -286,7 +286,7 @@ class OnetimePad():
         )
         button_encrypt.place(
             x=221.0,
-            y=389.0,
+            y=359.0,
             width=317.0,
             height=40.0
         )
@@ -302,14 +302,14 @@ class OnetimePad():
         )
         button_decrypt.place(
             x=561.0,
-            y=389.0,
+            y=359.0,
             width=317.0,
             height=40.0
         )
 
         canvas.create_text(
             221.0,
-            449.0,
+            419.0,
             anchor="nw",
             text="Ouput : ",
             fill="#000000",
@@ -318,9 +318,9 @@ class OnetimePad():
 
         canvas.create_rectangle(
             221.0,
-            472.0,
+            442.0,
             878.0,
-            545.0,
+            515.0,
             fill="#F5EFE6",
             outline="")
 
@@ -335,7 +335,7 @@ class OnetimePad():
         )
         button_save.place(
             x=221.0,
-            y=550.0,
+            y=520.0,
             width=657.0,
             height=30.0
         )
