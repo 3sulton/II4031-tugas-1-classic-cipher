@@ -42,7 +42,7 @@ def mainMenu(screen=None):
         screen.destroy()
     global window
     window = Tk()
-    window.title("Dofuntix")
+    window.title("Classic Cipher")
     window.geometry("900x600")
     window.configure(bg = "#E8DFCA")
 
@@ -57,6 +57,7 @@ def mainMenu(screen=None):
         relief = "ridge"
     )
 
+    # judul
     canvas.place(x = 0, y = 0)
     image_image_title = PhotoImage(
         file=relative_to_assets("title.png"))
@@ -66,6 +67,7 @@ def mainMenu(screen=None):
         image=image_image_title
     )
 
+    # tombol vigenere
     button_image_vigenere = PhotoImage(
         file=relative_to_assets("vigenere.png"))
     button_vigenere = Button(
@@ -75,6 +77,7 @@ def mainMenu(screen=None):
         command=lambda: openVigenere(),
         relief="flat"
     )
+    # posisi tombol vigenere
     button_vigenere.place(
         x=22.0,
         y=174.0,
@@ -82,6 +85,7 @@ def mainMenu(screen=None):
         height=40.0
     )
 
+    # tombol vigenere extended
     button_image_extended = PhotoImage(
         file=relative_to_assets("extended.png"))
     button_extended = Button(
@@ -91,6 +95,7 @@ def mainMenu(screen=None):
         command=lambda: openExtended(),
         relief="flat"
     )
+    # posisi tombol vigenere extended
     button_extended.place(
         x=22.0,
         y=249.0,
@@ -98,6 +103,7 @@ def mainMenu(screen=None):
         height=40.0
     )
 
+    # tombol playfair
     button_image_playfair = PhotoImage(
         file=relative_to_assets("playfair.png"))
     button_playfair = Button(
@@ -107,6 +113,7 @@ def mainMenu(screen=None):
         command=lambda: openPlayfair(),
         relief="flat"
     )
+    # posisi tombol playfair
     button_playfair.place(
         x=22.0,
         y=324.0,
@@ -114,6 +121,7 @@ def mainMenu(screen=None):
         height=40.0
     )
 
+    # tombol otp
     button_image_otp = PhotoImage(
         file=relative_to_assets("otp.png"))
     button_otp = Button(
@@ -123,6 +131,7 @@ def mainMenu(screen=None):
         command=lambda: openOnetimePad(),
         relief="flat"
     )
+    # posisi tombol otp
     button_otp.place(
         x=22.0,
         y=399.0,
@@ -130,6 +139,7 @@ def mainMenu(screen=None):
         height=40.0
     )
 
+    # tombol enigma
     button_image_enigma = PhotoImage(
         file=relative_to_assets("enigma.png"))
     button_enigma = Button(
@@ -139,6 +149,7 @@ def mainMenu(screen=None):
         command=lambda: openEnigma(),
         relief="flat"
     )
+    # posisi tombol enigma
     button_enigma.place(
         x=22.0,
         y=475.0,
@@ -146,6 +157,7 @@ def mainMenu(screen=None):
         height=40.0
     )
 
+    # line
     canvas.create_rectangle(
         194.0,
         0.0,
@@ -154,6 +166,7 @@ def mainMenu(screen=None):
         fill="#7895B2",
         outline="")
 
+    # welcome
     image_image_welcome = PhotoImage(
         file=relative_to_assets("welcome.png"))
     image_welcome = canvas.create_image(

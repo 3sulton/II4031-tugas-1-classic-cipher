@@ -56,6 +56,7 @@ class Enigma():
             relief = "ridge"
         )
 
+        # judul
         canvas.place(x = 0, y = 0)
         image_image_title = PhotoImage(
             file=relative_to_assets("title.png"))
@@ -65,6 +66,7 @@ class Enigma():
             image=image_image_title
         )
 
+        # tombol vigenere
         button_image_vigenere = PhotoImage(
             file=relative_to_assets("vigenere.png"))
         button_vigenere = Button(
@@ -74,6 +76,7 @@ class Enigma():
             command=lambda: openVigenere(),
             relief="flat"
         )
+        # posisi tombol vigenere
         button_vigenere.place(
             x=22.0,
             y=174.0,
@@ -81,6 +84,7 @@ class Enigma():
             height=40.0
         )
 
+        # tombol extended vigenere
         button_image_extended = PhotoImage(
             file=relative_to_assets("extended.png"))
         button_extended = Button(
@@ -90,6 +94,7 @@ class Enigma():
             command=lambda: openExtended(),
             relief="flat"
         )
+        # posisi tombol extended vigenere
         button_extended.place(
             x=22.0,
             y=249.0,
@@ -97,6 +102,7 @@ class Enigma():
             height=40.0
         )
 
+        # tombol playfair
         button_image_playfair = PhotoImage(
             file=relative_to_assets("playfair.png"))
         button_playfair = Button(
@@ -106,6 +112,7 @@ class Enigma():
             command=lambda: openPlayfair(),
             relief="flat"
         )
+        # posisi tombol playfair
         button_playfair.place(
             x=22.0,
             y=324.0,
@@ -113,6 +120,7 @@ class Enigma():
             height=40.0
         )
 
+        # tombol otp
         button_image_otp = PhotoImage(
             file=relative_to_assets("otp.png"))
         button_otp = Button(
@@ -122,6 +130,7 @@ class Enigma():
             command=lambda: openOnetimePad(),
             relief="flat"
         )
+        # posisi tombol otp
         button_otp.place(
             x=22.0,
             y=399.0,
@@ -129,6 +138,7 @@ class Enigma():
             height=40.0
         )
 
+        # tombol engima
         button_image_enigma_on = PhotoImage(
             file=relative_to_assets("enigma_on.png"))
         button_enigma_on = Button(
@@ -138,6 +148,7 @@ class Enigma():
             command=lambda: print("enigma_on clicked"),
             relief="flat"
         )
+        # posisi tombol enigma
         button_enigma_on.place(
             x=22.0,
             y=475.0,
@@ -145,6 +156,7 @@ class Enigma():
             height=40.0
         )
 
+        # line
         canvas.create_rectangle(
             194.0,
             0.0,
@@ -153,6 +165,7 @@ class Enigma():
             fill="#7895B2",
             outline="")
 
+        # input label
         canvas.create_text(
             221.0,
             27.0,
@@ -162,6 +175,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # tombol choose file untuk input (bisa plaintext bisa ciphertext)
         button_image_import = PhotoImage(
             file=relative_to_assets("import.png"))
         button_import = Button(
@@ -171,6 +185,7 @@ class Enigma():
             command=lambda: print("import clicked"),
             relief="flat"
         )
+        # posisi tombol choose file untuk input
         button_import.place(
             x=221.0,
             y=50.0,
@@ -178,6 +193,7 @@ class Enigma():
             height=30.0
         )
 
+        # kolom input
         entry_image_input = PhotoImage(
             file=relative_to_assets("input.png"))
         entry_bg_input = canvas.create_image(
@@ -185,6 +201,7 @@ class Enigma():
             121.5,
             image=entry_image_input
         )
+        # format input
         entry_input = Text(
             bd=0,
             bg="#F5EFE6",
@@ -192,6 +209,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1),
             highlightthickness=0
         )
+        # posisi kolom input
         entry_input.place(
             x=221.0,
             y=85.0,
@@ -199,6 +217,7 @@ class Enigma():
             height=71.0
         )
 
+        # key label
         canvas.create_text(
             221.0,
             178.0,
@@ -208,6 +227,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # slow key label
         canvas.create_text(
             221.0,
             206.0,
@@ -217,6 +237,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # kolom input slow key
         entry_image_slow = PhotoImage(
             file=relative_to_assets("entry_slow.png"))
         entry_bg_slow = canvas.create_image(
@@ -224,6 +245,7 @@ class Enigma():
             244.0,
             image=entry_image_slow
         )
+        # format input slow key
         entry_slow = Text(
             bd=0,
             bg="#F5EFE6",
@@ -231,6 +253,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1),
             highlightthickness=0
         )
+        # posisi input slow key
         entry_slow.place(
             x=221.0,
             y=229.0,
@@ -238,6 +261,7 @@ class Enigma():
             height=28.0
         )
 
+        # medium key label
         canvas.create_text(
             444.0,
             206.0,
@@ -247,6 +271,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # kolom input medium key
         entry_image_medium = PhotoImage(
             file=relative_to_assets("entry_medium.png"))
         entry_bg_medium = canvas.create_image(
@@ -254,6 +279,7 @@ class Enigma():
             244.0,
             image=entry_image_medium
         )
+        # format input medium key
         entry_medium = Text(
             bd=0,
             bg="#F5EFE6",
@@ -261,6 +287,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1),
             highlightthickness=0
         )
+        # posisi kolom input medium key
         entry_medium.place(
             x=444.0,
             y=229.0,
@@ -268,6 +295,7 @@ class Enigma():
             height=28.0
         )
 
+        # fast key label
         canvas.create_text(
             666.0,
             206.0,
@@ -277,6 +305,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # kolom input fast key
         entry_image_fast = PhotoImage(
             file=relative_to_assets("entry_fast.png"))
         entry_bg_fast = canvas.create_image(
@@ -284,6 +313,7 @@ class Enigma():
             244.0,
             image=entry_image_fast
         )
+        # format input fast key
         entry_fast = Text(
             bd=0,
             bg="#F5EFE6",
@@ -291,6 +321,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1),
             highlightthickness=0
         )
+        # posisi kolom input fast key
         entry_fast.place(
             x=666.0,
             y=229.0,
@@ -298,19 +329,22 @@ class Enigma():
             height=28.0
         )
 
+        # checkbutton untuk menggunakan spasi atau tidak
         check = Checkbutton(
                 window,
                 anchor = "nw",
                 bg = "#E8DFCA",
                 text = "add a space after 5 letters",
-                font=("Poppins Regular", 15 * -1),
+                font = ("Poppins Regular", 15 * -1)
         )
+        # posisi checkbox
         check.pack()
         check.place(
             x = 222.0,
             y = 285.0
         )
 
+        # tombol encrypt
         button_image_encrypt = PhotoImage(
             file=relative_to_assets("encrypt.png"))
         button_encrypt = Button(
@@ -320,6 +354,7 @@ class Enigma():
             command=lambda: print("encrypt clicked"),
             relief="flat"
         )
+        # posisi tombol encrypt
         button_encrypt.place(
             x=221.0,
             y=324.0,
@@ -327,6 +362,7 @@ class Enigma():
             height=40.0
         )
 
+        # tombol decrypt
         button_image_decrypt = PhotoImage(
             file=relative_to_assets("decrypt.png"))
         button_decrypt = Button(
@@ -336,6 +372,7 @@ class Enigma():
             command=lambda: print("decrypt clicked"),
             relief="flat"
         )
+        # posisi tombol decrypt
         button_decrypt.place(
             x=561.0,
             y=324.0,
@@ -343,6 +380,7 @@ class Enigma():
             height=40.0
         )
 
+        # output label
         canvas.create_text(
             221.0,
             384.0,
@@ -352,6 +390,7 @@ class Enigma():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # kolom output
         canvas.create_rectangle(
             221.0,
             407.0,
@@ -360,6 +399,7 @@ class Enigma():
             fill="#F5EFE6",
             outline="")
 
+        # tombol save file dari output
         button_image_save = PhotoImage(
             file=relative_to_assets("save.png"))
         button_save = Button(
@@ -369,11 +409,13 @@ class Enigma():
             command=lambda: print("save clicked"),
             relief="flat"
         )
+        # posisi tombol save file
         button_save.place(
             x=221.0,
             y=485.0,
             width=657.0,
             height=30.0
         )
+        
         window.resizable(False, False)
         window.mainloop()

@@ -56,6 +56,7 @@ class OnetimePad():
             relief = "ridge"
         )
 
+        # judul
         canvas.place(x = 0, y = 0)
         image_image_title = PhotoImage(
             file=relative_to_assets("title.png"))
@@ -65,6 +66,7 @@ class OnetimePad():
             image=image_image_title
         )
 
+        # tombol vigenere
         button_image_vigenere = PhotoImage(
             file=relative_to_assets("vigenere.png"))
         button_vigenere = Button(
@@ -74,6 +76,7 @@ class OnetimePad():
             command=lambda: openVigenere(),
             relief="flat"
         )
+        # posisi tombol vigenere
         button_vigenere.place(
             x=22.0,
             y=174.0,
@@ -81,6 +84,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # tombol extended vigenere
         button_image_extended = PhotoImage(
             file=relative_to_assets("extended.png"))
         button_extended = Button(
@@ -90,6 +94,7 @@ class OnetimePad():
             command=lambda: openExtended(),
             relief="flat"
         )
+        # posisi tombol extended vigenere
         button_extended.place(
             x=22.0,
             y=249.0,
@@ -97,6 +102,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # tombol playfair
         button_image_playfair = PhotoImage(
             file=relative_to_assets("playfair.png"))
         button_playfair = Button(
@@ -106,6 +112,7 @@ class OnetimePad():
             command=lambda: openPlayfair(),
             relief="flat"
         )
+        # posisi tombol playfair
         button_playfair.place(
             x=22.0,
             y=324.0,
@@ -113,6 +120,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # tombol otp
         button_image_otp_on = PhotoImage(
             file=relative_to_assets("otp_on.png"))
         button_otp_on = Button(
@@ -122,6 +130,7 @@ class OnetimePad():
             command=lambda: print("otp_on clicked"),
             relief="flat"
         )
+        # posisi tombol otp
         button_otp_on.place(
             x=22.0,
             y=399.0,
@@ -129,6 +138,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # tombol enigma
         button_image_enigma = PhotoImage(
             file=relative_to_assets("enigma.png"))
         button_enigma = Button(
@@ -138,6 +148,7 @@ class OnetimePad():
             command=lambda: openEnigma(),
             relief="flat"
         )
+        # posisi tombol enigma
         button_enigma.place(
             x=22.0,
             y=475.0,
@@ -145,6 +156,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # line
         canvas.create_rectangle(
             194.0,
             0.0,
@@ -153,6 +165,7 @@ class OnetimePad():
             fill="#7895B2",
             outline="")
 
+        # input label
         canvas.create_text(
             221.0,
             27.0,
@@ -162,6 +175,7 @@ class OnetimePad():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # tombol choose file untuk input (bisa plaintext atau ciphertext)
         button_image_import = PhotoImage(
             file=relative_to_assets("import.png"))
         button_import = Button(
@@ -171,6 +185,7 @@ class OnetimePad():
             command=lambda: print("import clicked"),
             relief="flat"
         )
+        # posisi tombol choose file untuk input
         button_import.place(
             x=221.0,
             y=50.0,
@@ -178,6 +193,7 @@ class OnetimePad():
             height=30.0
         )
 
+        # kolom input
         entry_image_input = PhotoImage(
             file=relative_to_assets("input.png"))
         entry_bg_input = canvas.create_image(
@@ -185,6 +201,7 @@ class OnetimePad():
             121.5,
             image=entry_image_input
         )
+        # format input
         entry_input = Text(
             bd=0,
             bg="#F5EFE6",
@@ -192,6 +209,7 @@ class OnetimePad():
             font=("Poppins Regular", 15 * -1),
             highlightthickness=0
         )
+        # posisi kolom input
         entry_input.place(
             x=221.0,
             y=85.0,
@@ -199,6 +217,7 @@ class OnetimePad():
             height=71.0
         )
 
+        # key label
         canvas.create_text(
             221.0,
             178.0,
@@ -208,6 +227,7 @@ class OnetimePad():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # tombol generate key (untuk enkripsi)
         button_image_generate = PhotoImage(
             file=relative_to_assets("generate_key.png"))
         button_generate = Button(
@@ -217,6 +237,7 @@ class OnetimePad():
             command=lambda: print("generate clicked"),
             relief="flat"
         )
+        # posisi tombol generate key
         button_generate.place(
             x=221.0,
             y=201.0,
@@ -224,6 +245,7 @@ class OnetimePad():
             height=30.0
         )
 
+        # tombol choose key file untuk dekripsi
         button_image_import_key = PhotoImage(
             file=relative_to_assets("import_key.png"))
         button_import_key = Button(
@@ -233,6 +255,7 @@ class OnetimePad():
             command=lambda: print("import_key clicked"),
             relief="flat"
         )
+        # posisi tombol choose key file
         button_import_key.place(
             x=561.0,
             y=201.0,
@@ -240,7 +263,7 @@ class OnetimePad():
             height=30.0
         )
         
-
+        # kolom input key
         entry_image_key = PhotoImage(
             file=relative_to_assets("key.png"))
         entry_bg_key = canvas.create_image(
@@ -248,6 +271,7 @@ class OnetimePad():
             271.5,
             image=entry_image_key
         )
+        # format input key
         entry_key = Text(
             bd=0,
             bg="#F5EFE6",
@@ -255,6 +279,7 @@ class OnetimePad():
             font=("Poppins Regular", 15 * -1),
             highlightthickness=0
         )
+        # posisi kolom key
         entry_key.place(
             x=221.0,
             y=236.0,
@@ -262,6 +287,7 @@ class OnetimePad():
             height=71.0
         )
 
+        # checkbutton untuk menggunakan spasi atau tidak
         check = Checkbutton(
                 window,
                 anchor = "nw",
@@ -269,12 +295,14 @@ class OnetimePad():
                 text = "add a space after 5 letters",
                 font=("Poppins Regular", 15 * -1)
         )
+        # posisi checkbutton
         check.pack()
         check.place(
             x = 222.0,
             y = 324.0
         )
 
+        # posisi tombol encrypt
         button_image_encrypt = PhotoImage(
             file=relative_to_assets("encrypt.png"))
         button_encrypt = Button(
@@ -284,6 +312,7 @@ class OnetimePad():
             command=lambda: print("encrypt clicked"),
             relief="flat"
         )
+        # posisi tombol encrypt
         button_encrypt.place(
             x=221.0,
             y=359.0,
@@ -291,6 +320,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # tombol decrypt
         button_image_decrypt = PhotoImage(
             file=relative_to_assets("decrypt.png"))
         button_decrypt = Button(
@@ -300,6 +330,7 @@ class OnetimePad():
             command=lambda: print("decrypt clicked"),
             relief="flat"
         )
+        # posisi tombol decrypt
         button_decrypt.place(
             x=561.0,
             y=359.0,
@@ -307,6 +338,7 @@ class OnetimePad():
             height=40.0
         )
 
+        # output label
         canvas.create_text(
             221.0,
             419.0,
@@ -316,6 +348,7 @@ class OnetimePad():
             font=("Poppins Regular", 15 * -1)
         )
 
+        # posisi kolom output
         canvas.create_rectangle(
             221.0,
             442.0,
@@ -324,6 +357,7 @@ class OnetimePad():
             fill="#F5EFE6",
             outline="")
 
+        # tombol save dari output
         button_image_save = PhotoImage(
             file=relative_to_assets("save.png"))
         button_save = Button(
@@ -333,6 +367,7 @@ class OnetimePad():
             command=lambda: print("save clicked"),
             relief="flat"
         )
+        # posisi tombol save
         button_save.place(
             x=221.0,
             y=520.0,
