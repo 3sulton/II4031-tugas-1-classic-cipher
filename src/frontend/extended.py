@@ -313,30 +313,36 @@ class Extended():
         )
 
         # kolom output
-        canvas.create_rectangle(
+        '''canvas.create_rectangle(
             221.0,
             407.0,
             878.0,
             480.0,
             fill="#F5EFE6",
-            outline="")
-
-        # tombol save file dari output
-        button_image_save = PhotoImage(
-            file=relative_to_assets("save.png"))
-        button_save = Button(
-            image=button_image_save,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("save clicked"),
-            relief="flat"
+            outline="")'''
+        
+        # kolom output
+        entry_image_output = PhotoImage(
+            file=relative_to_assets("output.png"))
+        entry_bg_output = canvas.create_image(
+            549.5,
+            121.5,
+            image=entry_image_output
         )
-        # posisi tombol save file
-        button_save.place(
+        # format output
+        entry_output = Text(
+            bd=0,
+            bg="#F5EFE6",
+            fg="#000716",
+            font=("Poppins Regular", 15 * -1),
+            highlightthickness=0
+        )
+        # posisi kolom output
+        entry_output.place(
             x=221.0,
-            y=485.0,
+            y=407.0,
             width=657.0,
-            height=30.0
+            height=71.0
         )
         
         window.resizable(False, False)

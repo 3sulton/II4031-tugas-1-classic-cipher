@@ -391,13 +391,37 @@ class Enigma():
         )
 
         # kolom output
-        canvas.create_rectangle(
+        '''canvas.create_rectangle(
             221.0,
             407.0,
             878.0,
             480.0,
             fill="#F5EFE6",
-            outline="")
+            outline="")'''
+        
+        # kolom output
+        entry_image_output = PhotoImage(
+            file=relative_to_assets("output.png"))
+        entry_bg_output = canvas.create_image(
+            549.5,
+            121.5,
+            image=entry_image_output
+        )
+        # format output
+        entry_output = Text(
+            bd=0,
+            bg="#F5EFE6",
+            fg="#000716",
+            font=("Poppins Regular", 15 * -1),
+            highlightthickness=0
+        )
+        # posisi kolom output
+        entry_output.place(
+            x=221.0,
+            y=407.0,
+            width=657.0,
+            height=71.0
+        )
 
         # tombol save file dari output
         button_image_save = PhotoImage(
