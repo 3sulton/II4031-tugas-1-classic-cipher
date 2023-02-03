@@ -2,7 +2,7 @@ import numpy as np
 from chiper import chiper
 
 class playfair(chiper):
-    def __init__(self, M, K, C):
+    def __init__(self, M="", K="", C=""):
         super().__init__(M, K, C)
         # matrix_key yang valuenya berupa huruf
         self.matrix_key = np.full((5, 5), "A")

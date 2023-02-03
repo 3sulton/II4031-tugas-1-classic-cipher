@@ -12,7 +12,7 @@ from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Checkbutton, filedialog
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Checkbutton, filedialog, messagebox
 import tkinter as tk
 
 
@@ -389,7 +389,7 @@ class Vigenere():
 
         def save_file():
             file_content = entry_output.get('1.0', 'end')
-            filename = "cipher-" + datetime.datetime.now().strftime("%H%M%S-%Y%m%d") + ".txt"
+            filename = "vigenere-" + datetime.datetime.now().strftime("%H%M%S-%Y%m%d") + ".txt"
             with open(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) + '/file/' + filename, "w") as file:
                 file.write(file_content)
 

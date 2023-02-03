@@ -5,7 +5,7 @@ from be_vigenere import vigenere
 
 
 class otp(vigenere):
-    def __init__(self, M, K, C):
+    def __init__(self, M="", K="", C=""):
         super().__init__(M, K, C)
     
     def generate_key(self):
