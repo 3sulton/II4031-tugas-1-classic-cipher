@@ -452,7 +452,7 @@ class OnetimePad():
         # message save
         canvas.create_text(
             228.0,
-            5.0,
+            570.0,
             anchor="nw",
             text="format file name : otp-hms-ymd.txt",
             fill="#000000",
