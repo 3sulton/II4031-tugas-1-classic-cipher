@@ -101,6 +101,7 @@ class playfair(chiper):
         # TO DO:
         # menghapus nilai X yang tidak perlu
         # huruf J pada pesan sesungguhnya akan menjadi huruf I, gimana ngatasinnya
+        self.M = self.M.replace("X", "")
         
 def test_key_string_to_matrix():
     pf = playfair("", "jalan ganesha sepuluh", "")
