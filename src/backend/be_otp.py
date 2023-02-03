@@ -1,3 +1,4 @@
+import os
 import random
 import string
 import datetime
@@ -14,7 +15,8 @@ class otp(vigenere):
         self.K = "".join(random.choices(letters, k=length))
 
         self.key_filename = "key-" + datetime.datetime.now().strftime("%H%M%S-%Y%m%d") + ".txt"
-        key_dir = "../key/"
+        key_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
++ '/key/')
         with open(key_dir + self.key_filename, "w") as key_file:
             key_file.write(self.K)
 
