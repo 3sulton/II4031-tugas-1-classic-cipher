@@ -287,12 +287,18 @@ class Extended():
                 tk.messagebox.showwarning(message="Keynya jangan kosong, hadeh")
                 return
             pf = extendedVigenere(K=key)
-            split = plain_teks.split("/")
+            if "/" in plain_teks:
+                split = plain_teks.split("/")
+            elif "\\" in plain_teks:
+                split = plain_teks.split("\\")
             filename_with_ext = split[-1]
             split_plain_filename = filename_with_ext.split(".")
             split_plain_filename[0] += "-e"
             split[-1] = ".".join(split_plain_filename)
-            fileout = "/".join(split)
+            if "/" in plain_teks:
+                fileout = "/".join(split)
+            elif "\\" in plain_teks:
+                fileout = "\\".join(split)
             plain_teks = plain_teks.replace("\n", "")
             fileout = fileout.replace("\n", "")
             pf.encrypt(filename=plain_teks, fileout=fileout)
@@ -325,12 +331,18 @@ class Extended():
                 tk.messagebox.showwarning(message="Keynya jangan kosong, hadeh")
                 return
             pf = extendedVigenere(K=key)
-            split = cipher_teks.split("/")
+            if "/" in cipher_teks:
+                split = cipher_teks.split("/")
+            elif "\\" in cipher_teks:
+                split = cipher_teks.split("\\")
             filename_with_ext = split[-1]
             split_plain_filename = filename_with_ext.split(".")
             split_plain_filename[0] += "-d"
             split[-1] = ".".join(split_plain_filename)
-            fileout = "/".join(split)
+            if "/" in cipher_teks:
+                fileout = "/".join(split)
+            elif "\\" in cipher_teks:
+                fileout = "\\".join(split)
             cipher_teks = cipher_teks.replace("\n", "")
             fileout = fileout.replace("\n", "")
             pf.decrypt(filename=cipher_teks, fileout=fileout)
