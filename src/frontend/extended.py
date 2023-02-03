@@ -35,10 +35,6 @@ def openOnetimePad():
     from otp import OnetimePad
     OnetimePad(window)
 
-def openEnigma():
-    from enigma import Enigma
-    Enigma(window)
-
 class Extended():
     def __init__(self, screen):
         self.screen = screen
@@ -68,7 +64,7 @@ class Extended():
             file=relative_to_assets("title.png"))
         image_title = canvas.create_image(
             97.0,
-            87.0,
+            97.0,
             image=image_image_title
         )
 
@@ -85,7 +81,7 @@ class Extended():
         # posisi tombol vigenere
         button_vigenere.place(
             x=22.0,
-            y=174.0,
+            y=190.0,
             width=150.0,
             height=40.0
         )
@@ -103,7 +99,7 @@ class Extended():
         # posisi tombol vigenere extended
         button_extended_on.place(
             x=22.0,
-            y=249.0,
+            y=269.0,
             width=150.0,
             height=40.0
         )
@@ -121,7 +117,7 @@ class Extended():
         # posisi tombol platfair
         button_playfair.place(
             x=22.0,
-            y=324.0,
+            y=348.0,
             width=150.0,
             height=40.0
         )
@@ -139,25 +135,7 @@ class Extended():
         # posisi tombol otp
         button_otp.place(
             x=22.0,
-            y=399.0,
-            width=150.0,
-            height=40.0
-        )
-
-        # tombol enigma
-        button_image_enigma = PhotoImage(
-            file=relative_to_assets("enigma.png"))
-        button_enigma = Button(
-            image=button_image_enigma,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: openEnigma(),
-            relief="flat"
-        )
-        # posisi tombol enigma
-        button_enigma.place(
-            x=22.0,
-            y=475.0,
+            y=427.0,
             width=150.0,
             height=40.0
         )
@@ -263,7 +241,7 @@ class Extended():
         )
 
         # checkbutton untuk menggunakan spasi atau tidak
-        is_five_letter_formatted = tk.IntVar()
+        '''is_five_letter_formatted = tk.IntVar()
         check = Checkbutton(
                 window,
                 anchor = "nw",
@@ -277,7 +255,7 @@ class Extended():
         check.place(
             x = 222.0,
             y = 285.0
-        )
+        )'''
 
         def encrypt():
             # plain teks
@@ -372,7 +350,7 @@ class Extended():
             221.0,
             384.0,
             anchor="nw",
-            text="Ouput : ",
+            text="The result of the encryption/decryption are available in : ",
             fill="#000000",
             font=("Poppins Regular", 15 * -1)
         )
