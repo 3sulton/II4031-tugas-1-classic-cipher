@@ -10,9 +10,9 @@ class chiper:
     def __init__(self, M, K, C) -> None:
         # removes all whitespace characters
         # TO DO : filter semua karakter selain alfabet
-        self.M = "".join(M.split()).upper()
-        self.K = "".join(K.split()).upper()
-        self.C = "".join(C.split()).upper()
+        self.M = ''.join([m for m in M if m.isalpha()]).upper()
+        self.K = ''.join([k for k in K if k.isalpha()]).upper()
+        self.C = ''.join([c for c in C if c.isalpha()]).upper()
 
     def five_letter_format(self):
         formated = ""
